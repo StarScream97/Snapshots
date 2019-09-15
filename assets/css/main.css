@@ -1,0 +1,52 @@
+.page-enter-active,
+.page-leave-active {
+    transition: opacity .5s;
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 100px;
+}
+
+.grid-item {
+    grid-row: span 2;
+}
+
+.grid-item:nth-child(3n) {
+    grid-row: span 3;
+}
+
+.grid-item:nth-child(5n) {
+    grid-row: span 4;
+}
+
+.grid-item img,
+.grid-item-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item-image-wrapper:hover .grid-item-overlay {
+    opacity: 1;
+}
+
+.grid-item-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+}
